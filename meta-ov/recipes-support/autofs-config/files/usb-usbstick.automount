@@ -5,4 +5,4 @@ Description=Automatically mount connected USB drives
 Where=/usb/usbstick
 
 [Install]
-WantedBy=ovmenu-ng.service
+WantedBy=ovmenu-x.service
