@@ -82,7 +82,7 @@ backup-system.sh)
 	done
 	
 	# Store if profiles are protected or not
-	if opkg list-installed | grep "e2fsprogs" > /dev/null; 
+	if [[ 'opkg list-installed | grep "e2fsprogs -"' == *"e2fsprogs"* ]]; 
 	then
 	PROFILE= find "$XCSOAR_PATH" -maxdepth 1 -type f -name '*.prf' -exec sh -c '
 	for PROFILE; 
@@ -180,7 +180,7 @@ restore-system.sh)
 	done
 
 	# Restore protection for profiles if necessary
-	if opkg list-installed | grep "e2fsprogs" > /dev/null; 
+	if [[ 'opkg list-installed | grep "e2fsprogs -"' == *"e2fsprogs"* ]]; 
 	then
 		PROFILE= find "$XCSOAR_PATH" -maxdepth 1 -type f -name '*.prf' -exec sh -c '
 		for PROFILE; 
@@ -201,7 +201,7 @@ restore-system.sh)
 			PROFILE_FILE=`basename "$PROFILE"`
 			PROFILE_NAME=${PROFILE_FILE%.*}
 			case `cat /home/root/profile-settings/"$PROFILE_NAME"` in
-			protected)  echo ' You try to protect $PROFILE_NAME.prf, but chattr is not installed!';;
+			protected)  echo " You try to protect $PROFILE_NAME.prf, but chattr is not installed!";;
 			esac
 		done
 		' -- {} +
@@ -212,7 +212,7 @@ restore-system.sh)
 	echo " [#######===] brightness setting has been restored."
 	
 	# Restore rotation setting
-	grep "rotation" /boot/config.uEnv | cut -d '=' -f 2 > /sys/class/graphics/fbcon/rotate_all
+	grep "rotation" /boot/config.uEnv | cut -d '=' -f 2 > /sys/class/graphics/fbcon/rotate
 	echo " [########==] rotation setting has been restored.";;
 *)
 	>&2 echo 'call as backup-system.sh, upload-xcsoar.sh, restore-xcsoar.sh or restore-system.sh'
