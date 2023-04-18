@@ -4,7 +4,7 @@
 PR="r0"
 RCONFLICTS:${PN}="xcsoar-testing"
 
-SRC_URI = "git://github.com/XCSoar/XCSoar.git;protocol=https;branch=master \
+SRC_URI = "git://github.com/XCSoar/XCSoar.git;protocol=https;branch=FreeVario \
 "
 
 SRCREV = "db71cad5aa2c037be12a099c671195c3ec1f34c6"

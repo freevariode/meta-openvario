@@ -6,7 +6,7 @@ RCONFLICTS:${PN}="xcsoar"
 
 SRCREV:pn-xcsoar-testing = "${AUTOREV}" 
 
-SRC_URI = "git://github.com/freevariode/XCSoar.git;protocol=https;branch=master\
+SRC_URI = "git://github.com/freevariode/XCSoar.git;protocol=https;branch=FreeVario\
 	file://ovmenu-x.service \
 "
 
