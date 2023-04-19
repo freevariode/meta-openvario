@@ -153,7 +153,6 @@ restore-system.sh)
 
 	# Call Shell Function defined above
 	restore "$USB_PATH/$BACKUP/$MAC"/ / "Openvario and XCSoar"
-	. /etc/locale.conf
 	/bin/systemctl restart  --quiet --now ts_uinput
 
 	# Restore SSH status 
