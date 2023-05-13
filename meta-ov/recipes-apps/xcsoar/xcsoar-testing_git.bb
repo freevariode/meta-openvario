@@ -1,5 +1,7 @@
 # Copyright (C) 2014 Unknow User <unknow@user.org>
 # Released under the MIT license (see COPYING.MIT for the terms)
+# SRC_URI = "git://github.com/Scumi/XCSoar.git;protocol=https;branch=improvement_OpenVarioMenu \"
+# SRC_URI = "git://github.com/FreeVariode/XCSoar.git;protocol=https;branch=FreeVario \"
 
 PR = "r13"
 RCONFLICTS:${PN}="xcsoar"
