@@ -39,6 +39,7 @@ LC_LOCALE_PATH = "${datadir}/locale"
 SRC_URI += " \
 	file://0007-Disable-touch-screen-auto-detection.patch \
 	https://boostorg.jfrog.io/artifactory/main/release/1.82.0/source/boost_1_82_0.tar.bz2;sha256sum=a6e1ab9b0860e6a2881dd7b21fe9f737a095e5f33a3a874afc6a345228597ee6;unpack=0 \
+        file://more_alternates.patch \
 "
 
 inherit pkgconfig
