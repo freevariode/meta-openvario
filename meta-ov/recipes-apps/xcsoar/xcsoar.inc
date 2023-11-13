@@ -31,6 +31,8 @@ DEPENDS = "	\
 RDEPENDS:${PN} = "\
         ttf-dejavu-sans-condensed \
         bash \
+		dialog \
+		rsync \
 "
 
 S = "${WORKDIR}/git"
