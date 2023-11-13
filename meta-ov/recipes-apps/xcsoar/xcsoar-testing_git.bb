@@ -19,10 +19,8 @@ require xcsoar.inc
 PACKAGES += "ovmenu-x"
 RDEPENDS:ovmenu-x += " \
 	${PN} \
-	ovmenu-ng-skripts \
 	autofs-config \
 "
-RCONFLICTS:ovmenu-x += "ovmenu-ng-autostart"
 SYSTEMD_PACKAGES = "ovmenu-x"
 SYSTEMD_SERVICE:ovmenu-x = "ovmenu-x.service"
 

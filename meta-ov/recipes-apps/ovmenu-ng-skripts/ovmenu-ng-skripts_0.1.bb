@@ -21,6 +21,7 @@ RDEPENDS:${PN} = " \
 SRC_URI = "\
 	file://update-maps.sh \
 	file://update-system.sh \
+	file://system-info.sh \
 	file://download-igc.sh \
 	file://transfer-xcsoar.sh \
 	file://ov-calibrate-ts.sh \
@@ -39,6 +40,7 @@ do_install() {
 	install -m 0755 \
 		${S}/update-maps.sh \
 		${S}/update-system.sh \
+		${S}/system-info.sh \
 		${S}/download-igc.sh \
 		${S}/transfer-xcsoar.sh \
 		${S}/ov-calibrate-ts.sh \

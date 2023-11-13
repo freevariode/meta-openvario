@@ -30,6 +30,7 @@ DEPENDS = "	\
 
 RDEPENDS:${PN} = "\
         ttf-dejavu-sans-condensed \
+        bash \
 "
 
 S = "${WORKDIR}/git"
@@ -39,7 +40,13 @@ LC_LOCALE_PATH = "${datadir}/locale"
 SRC_URI += " \
 	file://0007-Disable-touch-screen-auto-detection.patch \
 	https://boostorg.jfrog.io/artifactory/main/release/1.82.0/source/boost_1_82_0.tar.bz2;sha256sum=a6e1ab9b0860e6a2881dd7b21fe9f737a095e5f33a3a874afc6a345228597ee6;unpack=0 \
-        file://more_alternates.patch \
+	file://more_alternates.patch \
+	file://update-maps.sh \
+	file://update-system.sh \
+	file://system-info.sh \
+	file://download-igc.sh \
+	file://transfer-xcsoar.sh \
+	file://ov-calibrate-ts.sh \
 "
 
 inherit pkgconfig
@@ -78,10 +85,24 @@ do_compile() {
 
 do_install() {
 	oe_runmake install-bin install-mo DESTDIR=${D}
+		install -m 0755 \
+		${WORKDIR}/update-maps.sh \
+		${WORKDIR}/update-system.sh \
+		${WORKDIR}/system-info.sh \
+		${WORKDIR}/download-igc.sh \
+		${WORKDIR}/transfer-xcsoar.sh \
+		${WORKDIR}/ov-calibrate-ts.sh \
+		${D}${bindir}/
+	cd ${D}${bindir}
+	ln -s -r transfer-xcsoar.sh restore-system.sh
+	ln -s -r transfer-xcsoar.sh restore-xcsoar.sh
+	ln -s -r transfer-xcsoar.sh backup-system.sh
+	ln -s -r transfer-xcsoar.sh upload-xcsoar.sh
 }
 
 FILES:${PN} = " \
 	${bindir}/xcsoar \
 	${bindir}/vali-xcs \
 	${LC_LOCALE_PATH}/*/LC_MESSAGES/xcsoar.mo \
+	${bindir}/*.sh \
 "
