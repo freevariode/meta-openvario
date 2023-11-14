@@ -107,4 +107,5 @@ FILES:${PN} = " \
 	${bindir}/vali-xcs \
 	${LC_LOCALE_PATH}/*/LC_MESSAGES/xcsoar.mo \
 	${bindir}/*.sh \
+	${bindir}/OpenSoar \
 "
