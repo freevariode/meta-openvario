@@ -8,7 +8,7 @@ RCONFLICTS:${PN}="xcsoar"
 
 SRCREV:pn-xcsoar-testing = "${AUTOREV}" 
 
-SRC_URI = "git://github.com/Blaubart/XCSoar.git;protocol=https;branch=opensoar\
+SRC_URI = "git://github.com/Blaubart/OpenSoar.git;protocol=https;branch=master\
 	file://ovmenu-x.service \
 "
 
