@@ -105,7 +105,7 @@ do_install() {
 FILES:${PN} = " \
 	${bindir}/xcsoar \
 	${bindir}/vali-xcs \
-	${LC_LOCALE_PATH}/*/LC_MESSAGES/xcsoar.mo \
+	${LC_LOCALE_PATH}/*/LC_MESSAGES/opensoar.mo \
 	${bindir}/*.sh \
 	${bindir}/OpenSoar \
 "
