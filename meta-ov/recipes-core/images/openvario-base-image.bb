@@ -36,6 +36,10 @@ IMAGE_INSTALL = " \
     packagegroup-base \
     distro-feed-configs \
     nano \
+    i2c-tools \
+    e2fsprogs \
+    usb-modeswitch \
+    usb-modeswitch-data \
     openssh-sftp-server \
     tslib \
     tslib-tests \
