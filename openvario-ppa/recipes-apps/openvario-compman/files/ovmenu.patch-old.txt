@@ -18,7 +18,7 @@
  	Exit) yesno_exit;;
 @@ -332,6 +334,10 @@
  	else
- 		LANG=$XCSOAR_LANG /opt/XCSoar/bin/xcsoar -fly -640x480
+ 		LANG=$XCSOAR_LANG /opt/XCSoar/bin/OpenSoar -fly -640x480
  	fi
 +}
 +
