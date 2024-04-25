@@ -39,7 +39,6 @@ LC_LOCALE_PATH = "${datadir}/locale"
 SRC_URI += " \
 	file://0007-Disable-touch-screen-auto-detection.patch \
 	file://more_alternates.patch \
-	file://transfer-xcsoar.sh \
 	https://boostorg.jfrog.io/artifactory/main/release/1.84.0/source/boost_1_84_0.tar.bz2;sha256sum=cc4b893acf645c9d4b698e9a0f08ca8846aa5d6c68275c14c3e7949c24109454;unpack=0 \
 "
 
@@ -79,20 +78,11 @@ do_compile() {
 
 do_install() {
 	oe_runmake install-bin install-mo DESTDIR=${D}
-		install -m 0755 \
-		${WORKDIR}/transfer-xcsoar.sh \
-		${D}${bindir}/
-	cd ${D}${bindir}
-	ln -s -r transfer-xcsoar.sh restore-system.sh
-	ln -s -r transfer-xcsoar.sh restore-xcsoar.sh
-	ln -s -r transfer-xcsoar.sh backup-system.sh
-	ln -s -r transfer-xcsoar.sh upload-xcsoar.sh
 }
 
 FILES:${PN} = " \
 	${bindir}/xcsoar \
 	${bindir}/vali-xcs \
 	${LC_LOCALE_PATH}/*/LC_MESSAGES/xcsoar.mo \
-	${bindir}/*.sh \
 	${bindir}/OpenSoar \
 "

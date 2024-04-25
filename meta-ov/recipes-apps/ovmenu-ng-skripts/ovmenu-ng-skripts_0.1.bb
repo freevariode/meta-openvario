@@ -22,6 +22,8 @@ SRC_URI = "\
 	file://update-maps.sh \
 	file://update-system.sh \
 	file://download-igc.sh \
+	file://system-info.sh \
+	file://transfer-xcsoar.sh \
 	file://logbook.sh \
 	file://ov-calibrate-ts.sh \
 "
@@ -40,10 +42,16 @@ do_install() {
 		${S}/update-maps.sh \
 		${S}/update-system.sh \
 		${S}/download-igc.sh \
+		${S}/system-info.sh \
+		${S}/transfer-xcsoar.sh \
 		${S}/logbook.sh \
 		${S}/ov-calibrate-ts.sh \
 		${D}${bindir}/
 	cd ${D}${bindir}
+	ln -s -r transfer-xcsoar.sh restore-system.sh
+	ln -s -r transfer-xcsoar.sh restore-xcsoar.sh
+	ln -s -r transfer-xcsoar.sh backup-system.sh
+	ln -s -r transfer-xcsoar.sh upload-xcsoar.sh
 }
 
 FILES:${PN} = " \
