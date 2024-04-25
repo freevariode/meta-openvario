@@ -33,6 +33,7 @@ do_install:append() {
 
 	install -d ${D}${systemd_unitdir}/system
 	install -m644 ${WORKDIR}/ovmenu-x.service ${D}${systemd_unitdir}/system
+	ln -rsf ${D}/${bindir}/OpenSoar ${D}/${bindir}/xcsoar
 }
 
 FILES:ovmenu-x += "${bindir}/OpenVarioMenu"
